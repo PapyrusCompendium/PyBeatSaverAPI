@@ -24,7 +24,7 @@ def GetScores(userID):
     for pageNumber in range(2, pageCount):
         print(f"Downloading Page {pageNumber}")
         jsonData = GetResource(f"/player/{userID}/scores/recent/{pageNumber}")
-        allScores['scores'] += (json.loads(jsonData)['scores'])
+        allScores['scores'] += json.loads(jsonData)['scores']
     return allScores
 
 userID = 11111111111111111 #Use your player ID here.
